@@ -24,7 +24,7 @@ export function UploadForm({
         <p className="eyebrow">Upload</p>
         <h2>Analyze your skin image</h2>
         <p className="muted">
-          Upload a clear photo of the affected skin area. Our AI will analyze the image 
+          Upload a clear photo of the affected skin area. Our system will analyze the image 
           and provide detailed information about the condition.
         </p>
       </div>

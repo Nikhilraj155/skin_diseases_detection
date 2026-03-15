@@ -244,13 +244,13 @@ function HeroSection() {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="hero-badge-dot"></span>
-            AI-Powered Detection
+            Skin Analysis
           </div>
           <h1>
-            Advanced Skin Analysis with <span>AI Technology</span>
+            Advanced Skin Analysis with <span>Advanced Technology</span>
           </h1>
           <p className="hero-description">
-            Upload a photo of your skin condition and get instant AI-powered analysis. 
+            Upload a photo of your skin condition and get instant analysis. 
             Receive detailed reports with symptoms, risk factors, and personalized recommendations for your skin health.
           </p>
           
@@ -297,7 +297,7 @@ function HeroSection() {
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M12 8v4l2 2"/>
               </svg>
-              <p style={{ marginTop: "1rem", fontSize: "1.125rem", opacity: 0.9 }}>AI Analysis Ready</p>
+              <p style={{ marginTop: "1rem", fontSize: "1.125rem", opacity: 0.9 }}>Analysis Ready</p>
             </div>
             <div className="hero-image-overlay">
               <div className="hero-image-card">
@@ -322,7 +322,7 @@ function FeaturesSection() {
   const features = [
     {
       icon: "🔬",
-      title: "Advanced AI Model",
+      title: "Advanced Technology",
       description: "State-of-the-art deep learning algorithms trained on extensive medical datasets for accurate skin condition detection."
     },
     {
@@ -358,7 +358,7 @@ function FeaturesSection() {
         <span className="section-label">Why Choose Us</span>
         <h2 className="section-title">Powerful Features for Accurate Detection</h2>
         <p className="section-description">
-          Our platform combines cutting-edge AI technology with medical expertise to provide you with accurate skin disease detection.
+          Our platform combines cutting-edge technology with medical expertise to provide you with accurate skin disease detection.
         </p>
       </div>
 
@@ -387,8 +387,8 @@ function HowItWorksSection() {
     },
     {
       number: 2,
-      title: "AI Analysis",
-      description: "Our advanced deep learning model analyzes the image against thousands of medical images to identify potential conditions."
+      title: "Analysis",
+      description: "Our advanced model analyzes the image against thousands of medical images to identify potential conditions."
     },
     {
       number: 3,
@@ -445,7 +445,7 @@ function DiseasesSection() {
         <span className="section-label">Conditions</span>
         <h2 className="section-title">Conditions We Detect</h2>
         <p className="section-description">
-          Our AI system can identify a wide range of skin conditions, from common issues to serious medical conditions.
+          Our system can identify a wide range of skin conditions, from common issues to serious medical conditions.
         </p>
       </div>
 
@@ -483,7 +483,7 @@ function StatsSection() {
         </div>
         <div className="stat-item">
           <h3>24/7</h3>
-          <p>AI Availability</p>
+          <p>24/7 Availability</p>
         </div>
       </div>
     </section>
@@ -570,7 +570,7 @@ function AppInterfaceSection() {
         <span className="section-label">Try It Now</span>
         <h2 className="section-title">Start Your Analysis</h2>
         <p className="section-description">
-          Upload a skin image and get instant AI-powered analysis with detailed PDF reports.
+          Upload a skin image and get instant analysis with detailed PDF reports.
         </p>
       </div>
 
@@ -636,7 +636,7 @@ function Footer() {
               SkinDoc
             </div>
             <p>
-              Advanced AI-powered skin disease detection system. Our mission is to make early skin disease detection accessible to everyone.
+              Advanced skin disease detection system. Our mission is to make early skin disease detection accessible to everyone.
             </p>
             <div className="footer-social">
               <a href="#" aria-label="Twitter">𝕏</a>

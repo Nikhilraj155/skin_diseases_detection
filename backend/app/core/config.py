@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     grok_model: str = Field(default="grok-2-latest")
     grok_base_url: str = Field(default="https://api.x.ai/v1")
 
-    frontend_origin: str = Field(default="http://localhost:5173")
+    frontend_origin: str = Field(default="http://localhost:5173,https://skin-diseases-detection-rho.vercel.app")
 
     model_path: Path = Field(default=Path("trained_model/best_model.h5"))
     labels_path: Path = Field(default=Path("trained_model/labels.json"))
