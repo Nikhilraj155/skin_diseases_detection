@@ -1,0 +1,45 @@
+{
+    "class_indices": {
+        "Atopic_Dermatitis": 0,
+        "Basal_Cell_Carcinoma": 1,
+        "Benign_Keratosis": 2,
+        "Dermatofibroma": 3,
+        "Eczema": 4,
+        "Fungal_Infections": 5,
+        "Melanocytic_Nevi": 6,
+        "Melanoma": 7,
+        "Psoriasis": 8,
+        "Seborrheic_Keratosis": 9,
+        "Vascular_Lesions": 10,
+        "Viral_Infections": 11
+    },
+    "idx_to_label": {
+        "0": "Atopic_Dermatitis",
+        "1": "Basal_Cell_Carcinoma",
+        "2": "Benign_Keratosis",
+        "3": "Dermatofibroma",
+        "4": "Eczema",
+        "5": "Fungal_Infections",
+        "6": "Melanocytic_Nevi",
+        "7": "Melanoma",
+        "8": "Psoriasis",
+        "9": "Seborrheic_Keratosis",
+        "10": "Vascular_Lesions",
+        "11": "Viral_Infections"
+    },
+    "num_classes": 12,
+    "classes": [
+        "Atopic_Dermatitis",
+        "Basal_Cell_Carcinoma",
+        "Benign_Keratosis",
+        "Dermatofibroma",
+        "Eczema",
+        "Fungal_Infections",
+        "Melanocytic_Nevi",
+        "Melanoma",
+        "Psoriasis",
+        "Seborrheic_Keratosis",
+        "Vascular_Lesions",
+        "Viral_Infections"
+    ]
+}
