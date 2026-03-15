@@ -81,9 +81,12 @@ __pycache__/
 
 data/
 HAM10000*
-*.jpg
+*.jpggit 
 
 venv/
 dataset/
 images/
 node_modules/
+
+data1/
+data2/
