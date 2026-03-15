@@ -216,6 +216,7 @@ function Navbar() {
           className="navbar-toggle" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
         >
           <span></span>
           <span></span>
@@ -285,7 +286,6 @@ function HeroSection() {
           <div className="hero-image-wrapper">
             <div className="hero-image" style={{ 
               background: "linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 50%, #4a7eb8 100%)",
-              height: "400px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

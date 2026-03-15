@@ -80,6 +80,21 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -126,6 +141,11 @@ img {
 button, input, textarea, select {
   font-family: inherit;
   font-size: inherit;
+  touch-action: manipulation;
+}
+
+a, button, input, select, textarea, label {
+  min-height: 44px;
 }
 
 /* ============================================
@@ -219,6 +239,18 @@ button, input, textarea, select {
   border: none;
   cursor: pointer;
   padding: var(--space-sm);
+}
+
+.navbar-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.navbar-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .navbar-toggle span {
@@ -363,6 +395,12 @@ button, input, textarea, select {
   width: 100%;
   height: auto;
   display: block;
+  aspect-ratio: 4 / 3;
+}
+
+.hero-visual .hero-image {
+  min-height: 300px;
+  height: 100%;
 }
 
 .hero-image-overlay {
@@ -1282,6 +1320,20 @@ button, input, textarea, select {
     font-size: 14px;
   }
 
+  .navbar-container {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .navbar-brand-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
@@ -1305,5 +1357,122 @@ button, input, textarea, select {
 
   .hero-actions .btn {
     width: 100%;
+  }
+
+  .hero-visual .hero-image {
+    height: 280px !important;
+  }
+
+  .step {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .feature-card,
+  .testimonial-card,
+  .disease-card {
+    padding: var(--space-md);
+  }
+
+  .upload-dropzone {
+    min-height: 200px;
+    padding: var(--space-sm);
+  }
+
+  .app-shell {
+    padding: 0 var(--space-sm) var(--space-xl);
+  }
+
+  .panel {
+    padding: var(--space-md);
+  }
+
+  .history-item {
+    padding: var(--space-sm) var(--space-md);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .footer-container,
+  .features-grid,
+  .diseases-grid,
+  .stats-grid,
+  .testimonials-grid,
+  .steps-container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+
+  .hero-stat-value {
+    font-size: 1.75rem;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .footer-brand {
+    font-size: 1.25rem;
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .disease-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .image-frame {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    font-size: 13px;
+  }
+
+  .btn {
+    padding: var(--space-sm) var(--space-lg);
+    min-height: 44px;
+  }
+
+  .hero-stat {
+    min-width: 80px;
   }
 }
