@@ -14,8 +14,21 @@ export async function createPrediction(file: File): Promise<PredictionRecord> {
   });
 
   if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(errorText || "Upload failed.");
+    let message = "Upload failed.";
+
+    try {
+      const errorBody = (await response.json()) as { detail?: string };
+      if (typeof errorBody.detail === "string" && errorBody.detail.trim()) {
+        message = errorBody.detail;
+      }
+    } catch {
+      const errorText = await response.text();
+      if (errorText.trim()) {
+        message = errorText;
+      }
+    }
+
+    throw new Error(message);
   }
 
   return response.json() as Promise<PredictionRecord>;
@@ -46,8 +59,21 @@ export async function getDiseaseReport(predictionId: string): Promise<DiseaseRep
   const response = await fetch(`${API_BASE_URL}/predictions/${predictionId}/report`);
   
   if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(errorText || "Failed to get report.");
+    let message = "Failed to get report.";
+
+    try {
+      const errorBody = (await response.json()) as { detail?: string };
+      if (typeof errorBody.detail === "string" && errorBody.detail.trim()) {
+        message = errorBody.detail;
+      }
+    } catch {
+      const errorText = await response.text();
+      if (errorText.trim()) {
+        message = errorText;
+      }
+    }
+
+    throw new Error(message);
   }
 
   return response.json() as Promise<DiseaseReport>;

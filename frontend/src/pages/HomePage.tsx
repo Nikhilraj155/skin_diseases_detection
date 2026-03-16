@@ -385,6 +385,7 @@ function HowItWorksSection() {
       title: "Upload Your Image",
       description: "Take a clear photo of the affected skin area or upload an existing image. Our system accepts all common image formats."
     },
+
     {
       number: 2,
       title: "Analysis",
@@ -518,13 +519,16 @@ function AppInterfaceSection() {
     return () => URL.revokeObjectURL(nextUrl);
   }, [selectedFile]);
 
+  function handleFileChange(file: File | null) {
+    setSelectedFile(file);
+    setPrediction(null);
+    setError(null);
+  }
+
   async function loadHistory() {
     try {
       const response = await getHistory();
       setHistory(response.items);
-      if (!prediction && response.items.length > 0) {
-        setPrediction(response.items[0]);
-      }
     } catch (loadError) {
       console.error("Failed to load history:", loadError);
     }
@@ -539,10 +543,12 @@ function AppInterfaceSection() {
     try {
       setError(null);
       setIsSubmitting(true);
+      setPrediction(null);
       const result = await createPrediction(selectedFile);
       setPrediction(result);
       setHistory((current) => [result, ...current.filter((item) => item.id !== result.id)]);
     } catch (submitError) {
+      setPrediction(null);
       setError(submitError instanceof Error ? submitError.message : "Detection failed.");
     } finally {
       setIsSubmitting(false);
@@ -582,7 +588,7 @@ function AppInterfaceSection() {
           <UploadForm
             previewUrl={previewUrl}
             isSubmitting={isSubmitting}
-            onFileChange={setSelectedFile}
+            onFileChange={handleFileChange}
             onSubmit={handleSubmit}
           />
           <div className="panel result-panel">

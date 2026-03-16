@@ -49,7 +49,7 @@ HAM10000*
 *.pb
 *.onnx
 checkpoints/
-
+backend/.model_cache/
 # Testing
 .pytest_cache/
 .coverage

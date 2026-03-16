@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useRef } from "react";
 
 type UploadFormProps = {
   previewUrl: string | null;
@@ -13,6 +13,8 @@ export function UploadForm({
   onFileChange,
   onSubmit,
 }: UploadFormProps) {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const nextFile = event.target.files?.[0] ?? null;
     onFileChange(nextFile);
@@ -30,7 +32,7 @@ export function UploadForm({
       </div>
 
       <label className="upload-dropzone">
-        <input type="file" accept="image/*" onChange={handleChange} />
+        <input ref={inputRef} type="file" accept="image/*" onChange={handleChange} />
         {previewUrl ? (
           <img src={previewUrl} alt="Selected preview" className="preview-image" />
         ) : (
@@ -38,9 +40,20 @@ export function UploadForm({
         )}
       </label>
 
-      <button className="primary-button" type="button" disabled={isSubmitting} onClick={onSubmit}>
-        {isSubmitting ? "Analyzing..." : "Analyze Image"}
-      </button>
+      <div className="upload-actions">
+        <button
+          className="primary-button"
+          type="button"
+          disabled={isSubmitting}
+          onClick={() => inputRef.current?.click()}
+        >
+          Upload Image
+        </button>
+
+        <button className="primary-button" type="button" disabled={isSubmitting} onClick={onSubmit}>
+          {isSubmitting ? "Analyzing..." : "Analyze Image"}
+        </button>
+      </div>
     </section>
   );
 }

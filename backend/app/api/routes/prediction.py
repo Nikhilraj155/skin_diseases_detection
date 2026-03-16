@@ -34,6 +34,8 @@ async def create_prediction(
 
     try:
         prediction = inference_service.predict(image_bytes)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Prediction failed: {exc}") from exc
 
